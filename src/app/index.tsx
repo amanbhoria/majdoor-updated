@@ -3,7 +3,10 @@ import { Button,Text, TextInput, ToastAndroid, View } from "react-native";
 import { Modal, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import { OTPVerification } from '@msg91comm/react-native-sendotp';
 import { Image, Pressable } from 'react-native';
+import { getDatabase, ref, set } from "firebase/database";
+import app from "../FirebaseService"
 
+const database = getDatabase(app);
 
 
 const otpGeneration = async (navigation: any) => {
@@ -17,6 +20,12 @@ const Login = ({navigation}:any) => {
     const [isModalVisible, setModalVisible] = useState(false);
 
     const [newUser,setNewUser] = React.useState(false);
+
+    set(ref(database, 'users/' + 1), {
+      username: "name",
+      email: "email",
+      profile_picture : "imageUrl"
+    });
 
 
     // return (
