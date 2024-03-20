@@ -22,8 +22,8 @@ const Login = ({navigation}:any) => {
     const [newUser,setNewUser] = React.useState(false);
 
     set(ref(database, 'users/' + 1), {
-      username: "name",
-      email: "email",
+      username: "nickbhoria007",
+      email: "nickbhoria007@gmail.com",
       profile_picture : "imageUrl"
     });
 
